@@ -1,3 +1,12 @@
 from django.db import models
+from django.utils import timezone
 
-# Create your models here.
+GENDER_CHOICES = (
+    ("女", '女'),
+    ("男", '男'),
+)
+
+class Customer(models.Model):
+  name = models.CharField('名前', max_length=20)
+  gender = models.CharField('性別', max_length=2, blank=True, choices=GENDER_CHOICES)
+  age = models.IntegerField('年齢')
