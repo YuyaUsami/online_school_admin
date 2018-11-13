@@ -31,3 +31,6 @@ class RecordUpdateView(UpdateView):
 class RecordCreateView(CreateView):
   model = LessonRecord
   form_class = LessonRecord
+
+class BillingListView(generic.TemplateView):
+  template_name = 'customer/billing_list.html'

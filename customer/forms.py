@@ -12,10 +12,10 @@ class RecordUpdateView(forms.ModelForm):
 
   class Meta:
     model = LessonRecord
-    fields = ("attending_time",)
+    fields = ("lesson_date", "attending_time", "lesson", "customer")
 
 class RecordCreateView(forms.ModelForm):
 
   class Meta:
     model = LessonRecord
-    fields = ("attending_time",)
+    fields = ("lesson_date", "attending_time", "lesson", "customer")

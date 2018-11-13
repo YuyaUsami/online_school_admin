@@ -10,4 +10,5 @@ urlpatterns = [
     path('record', views.RecordListView.as_view(), name='record'),
     path('record/add', views.RecordCreateView.as_view(), name='recordadd'),
     path('record/update/<int:pk>', views.RecordUpdateView.as_view(), name='recordupdate'),
+    path('billing', views.BillingListView.as_view(), name='billing'),
 ]
