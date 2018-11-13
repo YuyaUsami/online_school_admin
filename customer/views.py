@@ -34,3 +34,6 @@ class RecordCreateView(CreateView):
 
 class BillingListView(generic.TemplateView):
   template_name = 'customer/billing_list.html'
+
+class ReportListView(generic.TemplateView):
+  template_name = 'customer/report_list.html'
