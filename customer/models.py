@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 GENDER_CHOICES = (
     ("男", '男'),
@@ -23,14 +24,13 @@ class Lesson(models.Model):
 
 class LessonRecord(models.Model):
   lesson_date = models.DateField('受講日')
+  attending_time = models.IntegerField('受講時間', default=1, validators=[MinValueValidator(1), MaxValueValidator(12)])
   lesson = models.ForeignKey(
     Lesson, verbose_name='授業', on_delete=models.PROTECT,
   )
   customer = models.ForeignKey(
     Customer, verbose_name='顧客', on_delete=models.PROTECT,
   )
-  def __str__(self):
-    return self.lesson_date
 
 class ChangeFee(models.Model):
   boundary_time = models.IntegerField('境界時間')
