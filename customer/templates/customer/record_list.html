@@ -1,0 +1,32 @@
+{% extends 'customer/base.html'  %}
+
+{% block content %}
+<h1>レッスン受講記録一覧</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>受講者</th>
+      <th>ジャンル</th>
+      <th>受講日</th>
+      <th>受講時間</th>
+      <th>支払い金額</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for lessonrecord in lessonrecord_list %}
+    <tr>
+      <td>{{ lessonrecord.customer }}</td>
+      <td>{{ lessonrecord.lesson }}</td>
+      <td>{{ lessonrecord.lesson_date }}</td>
+      <td>{{ lessonrecord.attending_time }}</td>
+      <td>{{ lessonrecord.lesson.basic_fee }}</td>
+      <td><a href="{% url 'customer:recordupdate' lessonrecord.id %}">編集</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<a href="{% url 'customer:recordadd' %}">新規追加</a>
+
+{% endblock %}

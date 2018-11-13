@@ -1,0 +1,21 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+  <table class="table">
+    <tr>
+      <th>顧客名</th>
+      <td>{{ form.name }}</td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td>{{ form.gender }}</td>
+    </tr>
+    <tr>
+      <th>年齢</th>
+      <td>{{ form.age }}</td>
+    </tr>
+  </table>
+<button type="submit" class="btn btn-primary">登録</button>
+{% csrf_token %}
+</form>
