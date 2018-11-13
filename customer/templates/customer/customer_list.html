@@ -18,7 +18,7 @@
       <td>{{ customer.name }}</td>
       <td>{{ customer.gender }}</td>
       <td>{{ customer.age }}</td>
-      <td><a></a></td>
+      <td><a href="{% url 'customer:update' customer.pk %}">編集</a></td>
     </tr>
   {% endfor %}
   </tbody>

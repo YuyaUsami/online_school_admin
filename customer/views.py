@@ -16,3 +16,8 @@ class AddView(LoginRequiredMixin, generic.CreateView):
   model = Customer
   form_class = CustomerCreateForm
   success_url = reverse_lazy('customer:index')
+
+class UpdateView(LoginRequiredMixin, generic.UpdateView):
+  model = Customer
+  form_class = CustomerCreateForm
+  success_url = reverse_lazy('customer:index')
