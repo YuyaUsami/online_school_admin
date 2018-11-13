@@ -2,8 +2,8 @@ from django.db import models
 from django.utils import timezone
 
 GENDER_CHOICES = (
-    ("女", '女'),
     ("男", '男'),
+    ("女", '女'),
 )
 
 class Customer(models.Model):
